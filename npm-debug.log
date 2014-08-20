@@ -1,0 +1,94 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'phanton.js' ]
+2 info using npm@1.2.32
+3 info using node@v0.10.12
+4 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/package.json
+5 warn package.json poc@0.0.0 No repository field.
+6 warn package.json poc@0.0.0 No readme data.
+7 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/connect-livereload/package.json
+8 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt/package.json
+9 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-concurrent/package.json
+10 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-contrib-clean/package.json
+11 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-contrib-coffee/package.json
+12 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-contrib-compass/package.json
+13 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-contrib-concat/package.json
+14 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-contrib-connect/package.json
+15 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-contrib-copy/package.json
+16 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-contrib-cssmin/package.json
+17 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-contrib-htmlmin/package.json
+18 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-contrib-imagemin/package.json
+19 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-contrib-uglify/package.json
+20 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-contrib-watch/package.json
+21 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-google-cdn/package.json
+22 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-karma/package.json
+23 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-ngmin/package.json
+24 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-open/package.json
+25 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-rev/package.json
+26 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-svgmin/package.json
+27 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/grunt-usemin/package.json
+28 verbose read json /Users/Alex.Trebolle/Glass-Code/GP-Front/node_modules/matchdep/package.json
+29 verbose from cache /Users/Alex.Trebolle/Glass-Code/GP-Front/package.json
+30 verbose readDependencies using package.json deps
+31 verbose cache add [ 'phanton.js', null ]
+32 verbose cache add name=undefined spec="phanton.js" args=["phanton.js",null]
+33 verbose parsed url { protocol: null,
+33 verbose parsed url   slashes: null,
+33 verbose parsed url   auth: null,
+33 verbose parsed url   host: null,
+33 verbose parsed url   port: null,
+33 verbose parsed url   hostname: null,
+33 verbose parsed url   hash: null,
+33 verbose parsed url   search: null,
+33 verbose parsed url   query: null,
+33 verbose parsed url   pathname: 'phanton.js',
+33 verbose parsed url   path: 'phanton.js',
+33 verbose parsed url   href: 'phanton.js' }
+34 silly lockFile 85cecdca-phanton-js phanton.js
+35 verbose lock phanton.js /Users/Alex.Trebolle/.npm/85cecdca-phanton-js.lock
+36 silly lockFile 85cecdca-phanton-js phanton.js
+37 silly lockFile 85cecdca-phanton-js phanton.js
+38 verbose addNamed [ 'phanton.js', '' ]
+39 verbose addNamed [ null, '' ]
+40 silly lockFile f7d5b96c-phanton-js phanton.js@
+41 verbose lock phanton.js@ /Users/Alex.Trebolle/.npm/f7d5b96c-phanton-js.lock
+42 silly addNameRange { name: 'phanton.js', range: '', hasData: false }
+43 verbose url raw phanton.js
+44 verbose url resolving [ 'https://registry.npmjs.org/', './phanton.js' ]
+45 verbose url resolved https://registry.npmjs.org/phanton.js
+46 info trying registry request attempt 1 at 11:56:44
+47 http GET https://registry.npmjs.org/phanton.js
+48 http 404 https://registry.npmjs.org/phanton.js
+49 silly registry.get cb [ 404,
+49 silly registry.get   { date: 'Thu, 07 Aug 2014 09:56:45 GMT',
+49 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+49 silly registry.get     'content-type': 'application/json',
+49 silly registry.get     'cache-control': 'max-age=0',
+49 silly registry.get     'content-length': '52',
+49 silly registry.get     'accept-ranges': 'bytes',
+49 silly registry.get     via: '1.1 varnish',
+49 silly registry.get     age: '0',
+49 silly registry.get     'x-served-by': 'cache-lcy1121-LCY',
+49 silly registry.get     'x-cache': 'MISS',
+49 silly registry.get     'x-cache-hits': '0',
+49 silly registry.get     'x-timer': 'S1407405405.205264,VS0,VE94',
+49 silly registry.get     'keep-alive': 'timeout=10, max=50',
+49 silly registry.get     connection: 'Keep-Alive' } ]
+50 silly lockFile f7d5b96c-phanton-js phanton.js@
+51 silly lockFile f7d5b96c-phanton-js phanton.js@
+52 error 404 'phanton.js' is not in the npm registry.
+52 error 404 You should bug the author to publish it
+52 error 404
+52 error 404 Maybe try 'npm search phanton'
+52 error 404
+52 error 404 Note that you can also install from a
+52 error 404 tarball, folder, or http url, or git url.
+53 error System Darwin 11.4.2
+54 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "phanton.js"
+55 error cwd /Users/Alex.Trebolle/Glass-Code/GP-Front
+56 error node -v v0.10.12
+57 error npm -v 1.2.32
+58 error code E404
+59 verbose exit [ 1, true ]

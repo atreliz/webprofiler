@@ -2,10 +2,15 @@ Web Profiler
 ===========
 
 This is a website, that build your best CV (resume) consuming your own accounts on Linkedin,Twitter and Github.
-*What does it means?*
+
+**What does it means?**
+
 Means that you will always have updated info about your github repositories,and user info.
 Your last 10 tweets, updated.
+
 All your linkedin profile data (because of LinkedIn API you will need to update this info with some clicks)
+
+example:   [http://atreliz.github.io/](http://atreliz.github.io/)
 
 ##How to use it
 First thing is configure your accounts (Github, Twitter and Linkedin).
@@ -31,32 +36,37 @@ because is not a permanent LinkeIn login, you will need do this each time you wa
 
 install all node modules with
 
-  npm install
+  	npm install
 
 run the site with
 
-  grunt server
+  	grunt server
   
   
 ##Go to congifuration site
 
 First fill all data you already know on this file /configfile/profile.json
 
-Them go to
-http://localhost:9000/#/config
+Then go to
 
-and follow the instruccion to each API, to fill complytelly the  /configfile/profile.json file.
-also copy all the linekdin data to the /configfile/linkedin.json file.
+	http://localhost:9000/#/config
 
-DONE!
+and follow the instruccion to each API, to fill complytelly the  **/configfile/profile.json** file.
+also copy all the linekdin data to the **/configfile/linkedin.json** file.
+
+**DONE!**
 
 Now copy everything to your hosting at will work :)
 
 ##Customization
 
 Welcome.html page is an angular tempalte, fell free to coustomize it for you,and your css and html changes.
-all data will be on $rootScope.apiProfile
+all data will be on **$rootScope.apiProfile**
+
+
 
 
 *This code is Made by Alex Trebolle under http://opensource.org/licenses/MIT*
+
+
 

@@ -1,0 +1,73 @@
+.fcenter{
+    margin: auto;
+    display: block;
+    width:100%;
+    height: auto;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    margin:0px;
+    padding:0px;
+}
+
+header{
+    background:rgb(0, 143, 255);
+    color:white;
+    height: 80px;
+}
+header .title{margin-left:1%;}
+
+header a:hover, header a.active{ color:rgb(255, 255, 255);}
+
+
+
+
+
+
+/*---------*/
+.h200{min-height:200px;}
+.wcenter{width:98%; margin:auto 2%;}
+.w90{width:90%;}
+.w80{width:80%;}
+.w50{width:50%;}
+.w100{width:100%;}
+.fleft{float:left;}
+.fright{float:right;}
+
+
+
+.txtcenter{text-align: center;}
+
+.box{
+    float:left;
+    display: block;
+    width: 96%;
+    margin: 1% 1%;
+    padding: 1%;
+
+    border-radius: 5px;
+    border:black 1px solid;
+    
+}
+
+.api-section{
+
+    float:left;
+    display: block;
+    background: white;
+    width: 96%;
+    margin: 1% 1%;
+    padding: 1%;
+
+    border-radius: 5px;
+    border:black 1px solid;
+
+}
+
+
+
+
+
