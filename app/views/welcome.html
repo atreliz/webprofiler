@@ -54,11 +54,58 @@
 <!-- LINKEDIN user data-->
   <article  class="api-section">
 
-    <p>Config: <b>Linkedin</b> Account</p>
-
-  
     <h2>Linkedin User Data</h2>
-    <p> {{apiProfile.linkedin |json}}</p>
+    <p>Updated on: {{apiProfile.linkedin.lastModifiedTimestamp | date:'dd/MM/yyyy @ h:mma'}}</p>
+
+    <div class="w50 fleft">
+      <h4>Profile</h4>
+      <ul>
+        <li>{{apiProfile.linkedin.firstName}} {{apiProfile.linkedin.lastName}}</li>
+        <li>{{apiProfile.linkedin.headline}}</li>
+        <li>{{apiProfile.linkedin.location.name}}</li>
+        <li>{{apiProfile.linkedin.numConnections}} connections on Linkedin</li>
+      </ul>
+    </div>
+
+  <div class="w50 fright">
+    <h4>Courses & certifications</h4>
+    <ul>
+      <li ng-repeat="cert in apiProfile.linkedin.certifications.values">{{cert.name}}</li>
+      <li ng-repeat="course in apiProfile.linkedin.courses.values">{{course.name}}</li>
+    </ul>
+  </div>
+
+    <div class="w50 fleft">
+    <h4>Events</h4>
+    <ul>
+      <li ng-repeat="event in apiProfile.linkedin.publications.values">{{event.title}} ({{event.date.day}}/{{event.date.month}}/{{event.date.year}})</li>
+    </ul>
+  </div>
+
+  <div class="w50 fright">
+    <h4>Languages</h4>
+    <ul>
+      <li ng-repeat="lang in apiProfile.linkedin.languages.values">{{lang.language.name}}</li>
+    </ul>
+  </div>
+
+
+  <div class="w50 fleft">
+    <h4>Recomendations</h4>
+      <div ng-repeat="recommendation in apiProfile.linkedin.recommendationsReceived.values">
+        <p>{{recommendation.recommendationText}}</p>
+        <p>by {{recommendation.recommender.firstName}} {{recommendation.recommender.lastName}}</p>
+      </div>
+  </div>
+
+  <div class="w50 fright">
+    <h4>Skills</h4>
+    <ul>
+      <li ng-repeat="skill in apiProfile.linkedin.skills.values">{{skill.skill.name}}</li>
+    </ul>
+  </div>
+
+    <!--p> {{apiProfile.linkedin |json}}</p-->
 
   </article>
 

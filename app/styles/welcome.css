@@ -25,10 +25,11 @@ a:hover{font-weight: bold;}
 
 /*Contact*/
 body.cv #contact{
-	width:30%;
+	width:29%;
 	padding: 1%;
 	float:left;
 	height: 400px;
+	margin: 1% 1%;
 }
 body.cv #contact img{
 	margin: auto;
@@ -42,20 +43,21 @@ body.cv #contact img{
 /*Code*/
 
 body.cv #code{
-	width:30%;
+	width:29%;
 	padding: 1%;
 	float:left;
 	height: 400px;
 	overflow: auto;
-	margin:auto 1%;
+	margin: 1% 1.2%;
 }
 
 /*tweets*/
 
 body.cv #tweets{
-	width:30%;
+	width:29%;
 	padding: 1%;
 	float:left;
 	height: 400px;
+	margin: 1% 1%;
 	overflow: auto;
 }
