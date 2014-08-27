@@ -55,8 +55,13 @@ angular.module('APIServices', []).
 factory('configFile', ['$q','$http',function($q,$http){
     	
     	//Service to Load Local JSON files
-    	function loadconfig(file){
-			serviceUrl = "/configfile/"+file;
+    	function loadconfig(file,path){
+    		if (!!path){
+				serviceUrl = "/configfile/"+path+"/"+file;
+    		}else{
+    			serviceUrl = "/configfile/"+file;
+    		}
+			
 	        var deferred = $q.defer();
 	        console.log("calling for file data "+file);
 	        $http({

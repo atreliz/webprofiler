@@ -3,10 +3,17 @@
 angular.module('ProfileApp')
   	.controller('loadConfigCtrl',['$scope','$rootScope','$http','configFile','GitHubApi', function ($scope,$rootScope,$http,configFile,GitHubApi) {
 
+		var offline=true;
+		
+		
+		//if($location.path=="offline"){offline=true;}
+
+
+
 		$rootScope.mode="config";//this will let you use different css on config and welcome page
 		console.log("loadConfigCtrl controller loaded,css mode: "+$rootScope.mode);
 		//all data will be reusable from here
-		$rootScope.apiProfile={ "github":{},"twitter":{},"linkedin":{},"extra":{} };
+		$rootScope.apiProfile={ "github":{"user":"","repos":""},"twitter":{},"linkedin":{},"extra":{} };
 
 
 		//-1--Get config file- Need to make all calls and get API datas
@@ -16,14 +23,23 @@ angular.module('ProfileApp')
 	            function(response) { //success
 	            	$rootScope.config=response;
 	            	$rootScope.configSTR=JSON.stringify(response, 2, "\t");
+	            	if(offline==true){// load from OFFLINE
+	            		$scope.loadFile("githubrepos.json");
+	            		$scope.loadFile("githubuser.json");
+	            		$scope.loadFile("twitter.json");
 
-	            	//load data from
-	            	//github
-	            		$scope.connectGithub($rootScope.config.github.user);
-	            	//twitter
-	            		$scope.loadTweets($rootScope.config.twitter.userCredential,$rootScope.config.twitter.user);
-	            	//linkedin this will take data if you are login.But the mock data will date from a JSON file
-	            		$scope.reloadLinkedin();
+	            	}else{//load data from ONLINE
+	            		
+	            		//github
+	            			$scope.connectGithub($rootScope.config.github.user);
+	            		//twitter
+	            			$scope.loadTweets($rootScope.config.twitter.userCredential,$rootScope.config.twitter.user);
+	            		//linkedin this will take data if you are login.But the mock data will date from a JSON file
+	            			$scope.reloadLinkedin();
+	            	}
+
+	            	
+
 
 	            }, function(response) {//failed
 	            	console.error("Error getting profile.json");
@@ -32,40 +48,43 @@ angular.module('ProfileApp')
 
 	    };
 
-  		$scope.loadConfiguration("profile.json");
+  		$scope.loadConfiguration("profile.json"); //confgi profile JSON of all accounts
 
   		//-2--Get linkedin profile from file
-		$scope.loadConfiguration = function(file) {
+		$scope.loadFile = function(file,path) {
 			console.info("--> load Linkedin Profile from file");
-  			configFile.loadconfig(file).then(
+  			configFile.loadconfig(file,"offline").then(
 	            function(response) { //success
-	            	$rootScope.apiProfile.linkedin=response;
+
+	            	if (file=="linkedin.json"){
+	            		$rootScope.apiProfile.linkedin=response;
+
+  					}else if(file=="githubuser.json"){
+						$rootScope.apiProfile.github.user=response;
+
+  					}else if(file=="githubrepos.json"){
+						$rootScope.apiProfile.github.repos=response;
+
+  					}else if(file=="twitter.json"){
+						$rootScope.apiProfile.twitter=response;
+
+  					}else if(file=="extra.json"){
+						$rootScope.apiProfile.extra=response;
+  					}
+
 	            }, function(response) {//failed
-	            	console.error("Error getting linkedin.json");
+	            	console.error("Error getting the json file "+file);
                 console.log(response);
             });
 
 	    };
 
   		
-  		$scope.loadConfiguration("linkedin.json");
+  		$scope.loadFile("linkedin.json");
 
-  		//-3--Fell free to add some extra data 
-  		// I have added this because Linkedin does not let you take your summary and other data with his API
-		$scope.loadConfiguration = function(file) {
-			console.info("--> load Linkedin Profile from file");
-  			configFile.loadconfig(file).then(
-	            function(response) { //success
-	            	$rootScope.apiProfile.extra=response;
-	            }, function(response) {//failed
-	            	console.error("Error getting extra.json");
-                console.log(response);
-            });
-
-	    };
 
   		
-  		$scope.loadConfiguration("extra.json");
+  		$scope.loadFile("extra.json");
   		
 
 

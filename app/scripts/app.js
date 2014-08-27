@@ -15,6 +15,10 @@ angular.module('ProfileApp', ['ngRoute','ngSanitize','APIServices'])
       .when('/config', {
         templateUrl: 'views/config.html'
       })
+      .when('/data', {
+        templateUrl: 'views/data.html',
+        controller: 'welcomeCtrl'
+      })
       .when('/', {
         templateUrl: 'views/welcome.html',
         controller: 'welcomeCtrl'
